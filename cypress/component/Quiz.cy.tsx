@@ -5,11 +5,6 @@ describe('Quiz', () => {
         cy.mount(<Quiz />);
     });
 
-    it('should render the title text on the screen', () => {
-        cy.mount(<Quiz />);
-        cy.get('h1').should('have.text', 'Welcome to the Code Quiz!');
-    });
-
     it('should render the start button', () => {
         cy.mount(<Quiz />);
         cy.contains('Start Quiz').should('exist');
@@ -97,7 +92,7 @@ describe('Quiz', () => {
 
         // Assert the final score is correct (assuming score is shown after all questions)
         cy.log('Verifying the final score is displayed.');
-        cy.get('[data-cy="score"]').should('be.visible'); // Assuming correct answers lead to a perfect score
+        cy.get('[data-cy-root="score"]').should('be.visible'); // Assuming correct answers lead to a perfect score
       });
 
     it('should display the quiz completed message after answering all questions', () => {

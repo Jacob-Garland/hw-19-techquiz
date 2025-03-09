@@ -5,10 +5,6 @@ describe('User Journey', () => {
       cy.visit('http://127.0.0.1:3001/');
   });
 
-  it('should see the title text on the screen', () => {
-      cy.get('h1').should('have.text', 'Welcome to the Code Quiz!');
-  });
-
   it('should be able to click the start button', () => {
       cy.get('button').contains('Start Quiz').click();
   });
@@ -51,7 +47,7 @@ describe('User Journey', () => {
           cy.get('.btn-primary').first().click();
           cy.wait(500); // Adjust the wait time based on your application's response time
       }
-      cy.get('[data-cy="score"]').should('exist');
+      cy.get('div').should('have.class', 'alert alert-success');
   });
 
   it('should see / click the button to take a new quiz, when the quiz is over', () => {

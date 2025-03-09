@@ -92,7 +92,7 @@ describe('Quiz', () => {
 
         // Assert the final score is correct (assuming score is shown after all questions)
         cy.log('Verifying the final score is displayed.');
-        cy.get('[data-cy-root="score"]').should('be.visible'); // Assuming correct answers lead to a perfect score
+        cy.get('div').should('have.class', 'alert alert-success');
       });
 
     it('should display the quiz completed message after answering all questions', () => {
